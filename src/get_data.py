@@ -1,18 +1,18 @@
 import requests
 import time
-import datetime
+from datetime import datetime
 import logging
 
 
 logging.basicConfig(
-    filename="project.log",
+    filename="logs/project.log",
     level=logging.INFO,
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
 )
 
 
 class ApiData:
-    def __init__(self, url="https://catfact.ninja/fact", interval=10, file_path="facts_data.txt"):
+    def __init__(self, url="https://catfact.ninja/fact", interval=10, file_path="data/data.txt"):
         self.interval = interval
         self.url = url
         self.file_path = file_path
@@ -20,7 +20,7 @@ class ApiData:
 
     def get_data(self):
         response = requests.get(self.url)
-        fact = response["fact"]
+        fact = response.json()["fact"]
         timestamp = datetime.now().strftime('%d-%m-%Y %H:%M:%S')
         return {"timestamp": timestamp, "cats_fact": fact}
     
@@ -28,7 +28,7 @@ class ApiData:
         self.logger.info("Starting to get data...")
         while True:
             data = self.get_data()
-            with open(self.file_path, "w") as f:
-                f.write(f"{data["timestamp"]}, {data["fact"]}")
-            self.logger.info(f"Generated data - Timestamp: {data["timestamp"]},Fact: {data["fact"]}")
+            with open(self.file_path, "w", encoding="utf-8") as f:
+                f.write(f"{data["timestamp"]}; {data["cats_fact"]}")
+            self.logger.info(f"Generated data - Timestamp: {data["timestamp"]}, Fact: {data["cats_fact"]}")
             time.sleep(self.interval)

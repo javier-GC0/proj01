@@ -1,0 +1,15 @@
+2024-11-08 14:47:03,576 - ApiData - INFO - Starting to get data...
+2024-11-08 14:47:03,576 - DataClient - INFO - Starting client polling...
+2024-11-08 14:47:03,577 - DataClient - ERROR - Data file not found.
+2024-11-08 14:47:03,779 - ApiData - INFO - Generated data - Timestamp: 08-11-2024 14:47:03, Fact: Tylenol and chocolate are both poisionous to cats.
+2024-11-08 14:47:05,621 - DataClient - INFO - New fact - Timestamp: 08-11-2024 14:47:03, Fact: Tylenol and chocolate are both poisionous to cats.
+2024-11-08 14:47:13,953 - ApiData - INFO - Generated data - Timestamp: 08-11-2024 14:47:13, Fact: Many cats love having their forehead gently stroked.
+2024-11-08 14:47:15,637 - DataClient - INFO - New fact - Timestamp: 08-11-2024 14:47:13, Fact: Many cats love having their forehead gently stroked.
+2024-11-08 14:47:24,343 - ApiData - INFO - Generated data - Timestamp: 08-11-2024 14:47:24, Fact: British cat owners spend roughly 550 million pounds yearly on cat food.
+2024-11-08 14:47:25,645 - DataClient - INFO - New fact - Timestamp: 08-11-2024 14:47:24, Fact: British cat owners spend roughly 550 million pounds yearly on cat food.
+2024-11-08 14:47:34,787 - ApiData - INFO - Generated data - Timestamp: 08-11-2024 14:47:34, Fact: Your cat's heart beats at a rate almost double that of yours, from 110-140 beats per minute.
+2024-11-08 14:47:35,653 - DataClient - INFO - New fact - Timestamp: 08-11-2024 14:47:34, Fact: Your cat's heart beats at a rate almost double that of yours, from 110-140 beats per minute.
+2024-11-08 14:47:45,328 - ApiData - INFO - Generated data - Timestamp: 08-11-2024 14:47:45, Fact: The smallest pedigreed cat is a Singapura, which can weigh just 4 lbs (1.8 kg), or about five large cans of cat food. The largest pedigreed cats are Maine Coon cats, which can weigh 25 lbs (11.3 kg), or nearly twice as much as an average cat weighs.
+2024-11-08 14:47:45,666 - DataClient - INFO - New fact - Timestamp: 08-11-2024 14:47:45, Fact: The smallest pedigreed cat is a Singapura, which can weigh just 4 lbs (1.8 kg), or about five large cans of cat food. The largest pedigreed cats are Maine Coon cats, which can weigh 25 lbs (11.3 kg), or nearly twice as much as an average cat weighs.
+2024-11-08 14:47:55,752 - ApiData - INFO - Generated data - Timestamp: 08-11-2024 14:47:55, Fact: When a domestic cat goes after mice, about 1 pounce in 3 results in a catch.
+2024-11-08 14:47:57,678 - DataClient - INFO - New fact - Timestamp: 08-11-2024 14:47:55, Fact: When a domestic cat goes after mice, about 1 pounce in 3 results in a catch.

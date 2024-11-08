@@ -1,6 +1,6 @@
 import threading
-from src.client import DataClient
-from src.data import ApiData
+from client import DataClient
+from get_data import ApiData
 
 
 def main():
