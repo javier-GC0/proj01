@@ -10,9 +10,11 @@ logging.basicConfig(
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
 )
 
+CRYPTO = "bitcoin"
+CURRENCY = "usd"
 
 class ApiData:
-    def __init__(self, url="https://catfact.ninja/fact", interval=10, file_path="data/data.txt"):
+    def __init__(self, url=f"https://api.coingecko.com/api/v3/simple/price?ids={CRYPTO}&vs_currencies={CURRENCY}", interval=10, file_path="data/data.txt"):
         self.interval = interval
         self.url = url
         self.file_path = file_path
@@ -20,15 +22,20 @@ class ApiData:
 
     def get_data(self):
         response = requests.get(self.url)
-        fact = response.json()["fact"]
+        price = response.json()[CRYPTO][CURRENCY]
         timestamp = datetime.now().strftime('%d-%m-%Y %H:%M:%S')
-        return {"timestamp": timestamp, "cats_fact": fact}
+        if response.status_code == 200:
+            return {"timestamp": timestamp, "price": price}
+        return {}
     
     def run(self):
         self.logger.info("Starting to get data...")
         while True:
             data = self.get_data()
-            with open(self.file_path, "w", encoding="utf-8") as f:
-                f.write(f"{data["timestamp"]}; {data["cats_fact"]}")
-            self.logger.info(f"Generated data - Timestamp: {data["timestamp"]}, Fact: {data["cats_fact"]}")
+            if data:
+                with open(self.file_path, "w", encoding="utf-8") as f:
+                    f.write(f"{data["timestamp"]}; {data["price"]}")
+                self.logger.info(f"Generated data - Timestamp: {data["timestamp"]}, Price: {data["price"]}")
+            else:
+                self.logger.warning("No data received, retrying...")
             time.sleep(self.interval)

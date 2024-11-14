@@ -20,10 +20,10 @@ class DataClient():
         try:
             with open(self.file_path, "r", encoding="utf-8") as f:
                 line = f.readline().strip()
-                timestamp, fact = line.split(";")
+                timestamp, price = line.split(";")
                 if timestamp != self.last_timestamp:
                     self.last_timestamp = timestamp
-                    self.logger.info(f"New fact - Timestamp: {timestamp}, Fact:{fact}")
+                    self.logger.info(f"New data - Timestamp: {timestamp}, Price:{price}")
         except FileNotFoundError:
             self.logger.error("Data file not found.")
         except Exception as e:
