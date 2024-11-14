@@ -1,8 +1,8 @@
 import requests
 import time
 from datetime import datetime
-import logging
 from file_handler import FileHandler
+from logging_handler import LoggerConfig
 
 class ApiData:
     def __init__(self, config):
@@ -11,7 +11,8 @@ class ApiData:
         self.interval = self.config["intervals"]["interval"]
         self.file_path = self.config["data_file"]["path"]
         self.file_handler = FileHandler(self.config["data_file"]["path"], self.config)
-        self.logger = logging.getLogger("ApiData")
+        logger_config = LoggerConfig(self.config) 
+        self.logger = logger_config.get_logger(self.config["logging"]["data_name"])
 
     def get_data(self):
         response = requests.get(self.url)

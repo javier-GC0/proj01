@@ -14,6 +14,8 @@ logging:
   file: "logs/project.log"
   level: "INFO"
   format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  data_name: "ApiData"
+  client_name: "DataClient"
 authorship:
   name: "Javier"
   surname1: "Garcia"

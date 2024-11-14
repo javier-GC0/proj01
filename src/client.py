@@ -1,6 +1,6 @@
 import time
-import logging
 from file_handler import FileHandler
+from logging_handler import LoggerConfig
 
 
 class DataClient():
@@ -10,7 +10,8 @@ class DataClient():
         self.last_timestamp = None
         self.poll_interval = self.config["intervals"]["poll_interval"]
         self.file_handler = FileHandler(self.config["data_file"]["path"], self.config)
-        self.logger = logging.getLogger("DataClient")
+        logger_config = LoggerConfig(self.config) 
+        self.logger = logger_config.get_logger(self.config["logging"]["client_name"])
     
     def check_new_data(self):
         try:
