@@ -2,39 +2,36 @@ import requests
 import time
 from datetime import datetime
 import logging
-
-
-logging.basicConfig(
-    filename="logs/project.log",
-    level=logging.INFO,
-    format="%(asctime)s - %(name)s - %(levelname)s - %(message)s"
-)
-
-CRYPTO = "bitcoin"
-CURRENCY = "usd"
+from file_handler import FileHandler
 
 class ApiData:
-    def __init__(self, url=f"https://api.coingecko.com/api/v3/simple/price?ids={CRYPTO}&vs_currencies={CURRENCY}", interval=10, file_path="data/data.txt"):
-        self.interval = interval
-        self.url = url
-        self.file_path = file_path
+    def __init__(self, config):
+        self.config = config
+        self.url = self.config["api_info"]["url"].format(crypto=self.config["api_info"]["crypto"], currency=self.config["api_info"]["currency"])
+        self.interval = self.config["intervals"]["interval"]
+        self.file_path = self.config["data_file"]["path"]
+        self.file_handler = FileHandler(self.config["data_file"]["path"], self.config)
         self.logger = logging.getLogger("ApiData")
 
     def get_data(self):
         response = requests.get(self.url)
-        price = response.json()[CRYPTO][CURRENCY]
-        timestamp = datetime.now().strftime('%d-%m-%Y %H:%M:%S')
-        if response.status_code == 200:
-            return {"timestamp": timestamp, "price": price}
-        return {}
+        try:
+            data = response.json()
+            self.logger.info(f"Response JSON: {data}")
+            price = data[self.config["api_info"]["crypto"]][self.config["api_info"]["currency"]]
+            timestamp = datetime.now().strftime(self.config["data_file"]["date_format"])
+            if response.status_code == 200:
+                return {"timestamp": timestamp, "price": price}
+        except Exception as e:
+            self.logger.error(f"Error obtaining or processing data: {e}")
+            return {}
     
     def run(self):
         self.logger.info("Starting to get data...")
         while True:
             data = self.get_data()
             if data:
-                with open(self.file_path, "w", encoding="utf-8") as f:
-                    f.write(f"{data["timestamp"]}; {data["price"]}")
+                self.file_handler.write_data(data)
                 self.logger.info(f"Generated data - Timestamp: {data["timestamp"]}, Price: {data["price"]}")
             else:
                 self.logger.warning("No data received, retrying...")

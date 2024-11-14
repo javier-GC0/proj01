@@ -1,11 +1,30 @@
-2024-11-14 09:56:06,915 - ApiData - INFO - Starting to get data...
-2024-11-14 09:56:06,916 - DataClient - INFO - Starting client polling...
-2024-11-14 09:56:06,918 - DataClient - ERROR - Data file not found.
-2024-11-14 09:56:07,124 - ApiData - INFO - Generated data - Timestamp: 14-11-2024 09:56:07, Price: 90761
-2024-11-14 09:56:08,938 - DataClient - INFO - New data - Timestamp: 14-11-2024 09:56:07, Price: 90761
-2024-11-14 09:56:17,590 - ApiData - INFO - Generated data - Timestamp: 14-11-2024 09:56:17, Price: 90761
-2024-11-14 09:56:19,053 - DataClient - INFO - New data - Timestamp: 14-11-2024 09:56:17, Price: 90761
-2024-11-14 09:56:27,702 - ApiData - INFO - Generated data - Timestamp: 14-11-2024 09:56:27, Price: 90761
-2024-11-14 09:56:29,120 - DataClient - INFO - New data - Timestamp: 14-11-2024 09:56:27, Price: 90761
-2024-11-14 09:56:37,794 - ApiData - INFO - Generated data - Timestamp: 14-11-2024 09:56:37, Price: 90761
-2024-11-14 09:56:39,150 - DataClient - INFO - New data - Timestamp: 14-11-2024 09:56:37, Price: 90761
+2024-11-14 13:14:44,166 - ApiData - INFO - Starting to get data...
+2024-11-14 13:14:44,166 - DataClient - INFO - Starting client polling...
+2024-11-14 13:14:44,168 - DataClient - ERROR - Data file not found.
+2024-11-14 13:14:44,333 - ApiData - INFO - Response JSON: {'bitcoin': {'usd': 91417}}
+2024-11-14 13:14:44,341 - ApiData - INFO - Generated data - Timestamp: 14-11-2024 13:14:44, Price: 91417
+2024-11-14 13:14:46,224 - DataClient - INFO - New data - Timestamp: 14-11-2024 13:14:44, Price: 91417
+2024-11-14 13:14:54,461 - ApiData - INFO - Response JSON: {'bitcoin': {'usd': 91417}}
+2024-11-14 13:14:54,461 - ApiData - INFO - Generated data - Timestamp: 14-11-2024 13:14:54, Price: 91417
+2024-11-14 13:14:56,315 - DataClient - INFO - New data - Timestamp: 14-11-2024 13:14:54, Price: 91417
+2024-11-14 13:15:04,555 - ApiData - INFO - Response JSON: {'bitcoin': {'usd': 91417}}
+2024-11-14 13:15:04,557 - ApiData - INFO - Generated data - Timestamp: 14-11-2024 13:15:04, Price: 91417
+2024-11-14 13:15:06,361 - DataClient - INFO - New data - Timestamp: 14-11-2024 13:15:04, Price: 91417
+2024-11-14 13:15:14,631 - ApiData - INFO - Response JSON: {'bitcoin': {'usd': 91417}}
+2024-11-14 13:15:14,631 - ApiData - INFO - Generated data - Timestamp: 14-11-2024 13:15:14, Price: 91417
+2024-11-14 13:15:16,372 - DataClient - INFO - New data - Timestamp: 14-11-2024 13:15:14, Price: 91417
+2024-11-14 13:15:24,692 - ApiData - INFO - Response JSON: {'bitcoin': {'usd': 91417}}
+2024-11-14 13:15:24,692 - ApiData - INFO - Generated data - Timestamp: 14-11-2024 13:15:24, Price: 91417
+2024-11-14 13:15:26,380 - DataClient - INFO - New data - Timestamp: 14-11-2024 13:15:24, Price: 91417
+2024-11-14 13:15:34,749 - ApiData - INFO - Response JSON: {'bitcoin': {'usd': 91417}}
+2024-11-14 13:15:34,749 - ApiData - INFO - Generated data - Timestamp: 14-11-2024 13:15:34, Price: 91417
+2024-11-14 13:15:36,476 - DataClient - INFO - New data - Timestamp: 14-11-2024 13:15:34, Price: 91417
+2024-11-14 13:15:44,841 - ApiData - INFO - Response JSON: {'bitcoin': {'usd': 91483}}
+2024-11-14 13:15:44,841 - ApiData - INFO - Generated data - Timestamp: 14-11-2024 13:15:44, Price: 91483
+2024-11-14 13:15:46,521 - DataClient - INFO - New data - Timestamp: 14-11-2024 13:15:44, Price: 91483
+2024-11-14 13:15:54,891 - ApiData - INFO - Response JSON: {'status': {'error_code': 429, 'error_message': "You've exceeded the Rate Limit. Please visit https://www.coingecko.com/en/api/pricing to subscribe to our API plans for higher rate limits."}}
+2024-11-14 13:15:54,891 - ApiData - ERROR - Error obtaining or processing data: 'bitcoin'
+2024-11-14 13:15:54,906 - ApiData - WARNING - No data received, retrying...
+2024-11-14 13:16:04,958 - ApiData - INFO - Response JSON: {'status': {'error_code': 429, 'error_message': "You've exceeded the Rate Limit. Please visit https://www.coingecko.com/en/api/pricing to subscribe to our API plans for higher rate limits."}}
+2024-11-14 13:16:04,958 - ApiData - ERROR - Error obtaining or processing data: 'bitcoin'
+2024-11-14 13:16:04,960 - ApiData - WARNING - No data received, retrying...

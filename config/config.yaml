@@ -1,0 +1,20 @@
+api_info:
+  crypto: "bitcoin"
+  currency: "usd"
+  url: "https://api.coingecko.com/api/v3/simple/price?ids={crypto}&vs_currencies={currency}"
+intervals:
+  interval: 10  # seconds
+  poll_interval: 2  # seconds
+data_file:
+  path: "data/data.txt"
+  date_format: "%d-%m-%Y %H:%M:%S"
+  delimiter: ";"
+  encoding: "utf-8"
+logging:
+  file: "logs/project.log"
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+authorship:
+  name: "Javier"
+  surname1: "Garcia"
+  surname2: "Carrasco"
