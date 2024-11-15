@@ -18,11 +18,10 @@ class ApiData:
         response = requests.get(self.url)
         try:
             data = response.json()
-            self.logger.info(f"Response JSON: {data}")
-            price = data[self.config["api_info"]["crypto"]][self.config["api_info"]["currency"]]
+            fact = data["fact"]
             timestamp = datetime.now().strftime(self.config["data_file"]["date_format"])
             if response.status_code == 200:
-                return {"timestamp": timestamp, "price": price}
+                return {"timestamp": timestamp, "fact": fact}
         except Exception as e:
             self.logger.error(f"Error obtaining or processing data: {e}")
             return {}
@@ -33,7 +32,7 @@ class ApiData:
             data = self.get_data()
             if data:
                 self.file_handler.write_data(data)
-                self.logger.info(f"Generated data - Timestamp: {data["timestamp"]}, Price: {data["price"]}")
+                self.logger.info(f"Generated data - Timestamp: {data["timestamp"]}, Fact: {data["fact"]}")
             else:
                 self.logger.warning("No data received, retrying...")
             time.sleep(self.interval)

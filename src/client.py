@@ -16,10 +16,10 @@ class DataClient():
     def check_new_data(self):
         try:
             line = self.file_handler.read_data()
-            timestamp, price = line.split(self.config["data_file"]["delimiter"])
+            timestamp, fact = line.split(self.config["data_file"]["delimiter"])
             if timestamp != self.last_timestamp:
                 self.last_timestamp = timestamp
-                self.logger.info(f"New data - Timestamp: {timestamp}, Price:{price}")
+                self.logger.info(f"New data - Timestamp: {timestamp}, Fact:{fact}")
         except FileNotFoundError:
             self.logger.error("Data file not found.")
         except Exception as e:

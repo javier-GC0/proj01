@@ -1,7 +1,8 @@
 api_info:
   crypto: "bitcoin"
   currency: "usd"
-  url: "https://api.coingecko.com/api/v3/simple/price?ids={crypto}&vs_currencies={currency}"
+  #url: "https://api.coingecko.com/api/v3/simple/price?ids={crypto}&vs_currencies={currency}"
+  url: "https://catfact.ninja/fact"
 intervals:
   interval: 10  # seconds
   poll_interval: 2  # seconds

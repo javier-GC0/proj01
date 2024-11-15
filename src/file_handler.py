@@ -6,7 +6,7 @@ class FileHandler:
 
     def write_data(self, data):
         with open(self.file_path, "w", encoding=self.config["data_file"]["encoding"]) as f:
-            f.write(f"{data["timestamp"]}{self.config["data_file"]["delimiter"]} {data["price"]}")
+            f.write(f"{data["timestamp"]}{self.config["data_file"]["delimiter"]} {data["fact"]}")
 
     def read_data(self):
         with open(self.file_path, "r", encoding=self.config["data_file"]["encoding"]) as f:
